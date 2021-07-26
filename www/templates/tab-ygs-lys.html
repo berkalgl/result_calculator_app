@@ -1,0 +1,76 @@
+<ion-view view-title="YGS Puan Hesaplama">
+<ion-content class="background" scroll="false">
+<div class="animated bounceInUp">
+	<div class="list">
+	<label class="item item-input">
+		<div class="col col-33">
+			<span class="label">Matematik Neti:</span>
+		</div>
+		<div class="col col-67 col-offset-10">
+			<input type="number" ng-model="matnet" min="0" max="40" placeholder="0 ile 40 arasi bir sayi giriniz.">
+		</div>
+	</label>
+	<label class="item item-input">
+		<div class="col col-33">
+			<span class="label">Fen Bilimleri Neti:</span>
+		</div>
+		<div class="col col-67 col-offset-10">
+			<input type="number" ng-model="fennet" min="0" max="40" placeholder="0 ile 40 arasi bir sayi giriniz.">
+		</div>
+	</label>
+	<label class="item item-input">
+		<div class="col col-33">
+			<span class="label">Turkce Neti:</span>
+		</div>
+		<div class="col col-67 col-offset-10">
+			<input type="number" ng-model="turnet" min="0" max="40" placeholder="0 ile 40 arasi bir sayi giriniz.">
+		</div>
+	</label>
+	<label class="item item-input">
+		<div class="col col-33">
+			<span class="label">Sosyal Neti:</span>
+		</div>
+		<div class="col col-67 col-offset-10">
+			<input type="number" ng-model="sosnet" min="0" max="40" placeholder="0 ile 40 arasi bir sayi giriniz.">
+		</div>
+	</label>
+</br>
+	<label class="item item-input">
+		<div class="col col-33">
+			<span class="label">Okul Not Ortalamasi:</span>
+		</div>
+		<div class="col col-67 col-offset-10">
+			<input type="number" ng-model="okulort" min="50" max="100" placeholder="50 ile 100 arasi bir sayi giriniz.">
+		</div>
+	</label>
+</div>
+	<label class="item item-input" ng-if="okulort">
+		<span class="label">Okul Basari Net Puani: {{okulort*5*0.12}}</span>
+    </label>
+		<div ng-if="sosnet && turnet && matnet && fennet" class="row header">
+          <div class="col col-33">YGS 1</div>
+          <div class="col col-33">YGS 2</div>
+          <div class="col col-33">YGS 3</div>
+        </div>
+        <div ng-if="sosnet && turnet && matnet && fennet" class="row">
+          <div class="col col-33">{{100.16 + matnet*3.998 + fennet*2.999 +turnet*1.999 + sosnet*1.000 | number : 3}}</div>
+          <div class="col col-33">{{100.16 + matnet*2.999 + fennet*3.998 +turnet*1.999 + sosnet*1.000 | number : 3}}</div>
+          <div class="col col-33">{{100.16 + matnet*1.999 + fennet*1.000 +turnet*3.998 + sosnet*2.999 | number : 3}}</div>
+        </div>
+        <div ng-if="sosnet && turnet && matnet && fennet">
+        	<hr>
+        </div>
+        <div ng-if="sosnet && turnet && matnet && fennet"  class="row header">
+          <div class="col col-33">YGS 4</div>
+          <div class="col col-33">YGS 5</div>
+          <div class="col col-33">YGS 6</div>
+        </div>
+        <div ng-if="sosnet && turnet && matnet && fennet"  class="row">
+          <div class="col col-33">{{100.16 + matnet*1.999 + fennet*1.000 + turnet*2.999 + sosnet*3.998 | number : 3}}</div>
+          <div class="col col-33">{{100.20 + matnet*3.299 + fennet*1.000 + turnet*3.699 + sosnet*1.999 | number : 3}}</div>
+          <div class="col col-33">{{100.20 + matnet*3.699 + fennet*1.999 + turnet*3.299 + sosnet*1.000 | number : 3}}</div>
+        </div>
+
+</div>
+</ion-content>
+</ion-view>

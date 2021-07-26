@@ -1,0 +1,106 @@
+<ion-view view-title="ALES Puan Hesaplama">
+  <ion-content class="background" scroll="false">
+  <div class="animated bounceInUp">
+    <div class="row">
+      <div class="col col-offset-50">Dogru</div>
+      <div class="col">Yanlis</div>
+    </div>
+  <div class="list">
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Sayisal-1 Testi</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="say1dog" min="0" max="40">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="say1yan" min="0" max="40">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Sayisal-2 Testi</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="say2dog" min="0" max="40">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="say2yan" min="0" max="40">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Sozel-1 Testi</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="soz1dog" min="0" max="40">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="soz1yan" min="0" max="40">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Sozel-2 Testi</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="soz2dog" min="0" max="40">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="soz2yan" min="0" max="40">
+        </label>
+      </div>
+    </div>
+</div>
+
+<div class="list" ng-if="say1dog && say1yan && say2dog && say2yan && soz1dog && soz1yan && soz2dog && soz2yan">
+  <hr>
+  <div class="row">
+      <div class="col col-50"> 
+          <span class="label">ALES Sayisal Puani</span>
+      </div>
+      <div class="col col-50"> 
+        <label>
+          {{alessayisalpuan(say1dog,say1yan,say2dog,say2yan,soz1dog,soz1yan)}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">ALES Sozel Puani</span>
+      </div>
+      <div class="col col-50"> 
+        <label >
+          {{alessozelpuan(say1dog,say2yan,soz1dog,soz1yan,soz2dog,soz2yan)}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">ALES Esit Agirlik Puani</span>
+      </div>
+      <div class="col col-50"> 
+        <label>
+          {{alesesitpuan(say1dog,say1yan,say2dog,say2yan,soz1dog,soz1yan)}}
+        </label>
+      </div>
+    </div>
+</div>
+  </div>  
+  </ion-content>
+</ion-view>

@@ -1,0 +1,59 @@
+.background.scroll-content {
+    background: url('../img/background2.jpg') no-repeat;
+    background-size: cover;
+}
+.bar-stable.bar.bar-header {
+	background: url('../img/background1.jpg') no-repeat;
+    background-size: cover;
+}
+.tab-nav.tabs {
+    background: url('../img/background3.jpg') no-repeat;
+    background-size: cover;
+}
+.item.item-input {
+    background-color: transparent !important;
+    border-color: #696969;
+}
+.label {
+	font-style: italic;
+}
+.title.title-center.header-item{
+	font-weight: bold;
+}
+.net {
+    font-weight: bold;
+    color:red;
+    padding:25px;
+}
+.button.button-full.button-positive{
+    background-color: transparent !important;
+    border-color: #696969;
+    color:black;
+}
+.centerdiv {
+    width: 200px;
+    height: 100px;
+    background-color: transparent !important;
+
+    position: absolute;
+    top:55%;
+    bottom: 0%;
+    left: 25%;
+    right: 0%;
+}
+.hyazi {
+    position: absolute;
+    top:20%;
+    bottom: 20%;
+    left: 25%;
+    right: 20%;
+    font-family: fantasy; 
+    font-size: 40px;
+}
+.syazi {
+    position: absolute;
+    top:40%;
+    bottom: 20%;
+    left: 20%;
+    right: 10%;
+}

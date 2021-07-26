@@ -1,0 +1,124 @@
+<ion-view view-title="KPSS Puan Hesaplama">
+  <ion-content class="background" scroll="false">
+  <div class="animated bounceInUp">
+     <div class="row">
+      <div class="col col-offset-33">Dogru</div>
+      <div class="col">Yanlis</div>
+      <div class="col" ng-if="gyetdog && gyetyan || gkuldog && gkulyan || ebildog && ebilyan || oalandog && oalanyan">
+        <label style="padding:25px;">Net</label>
+      </div>
+    </div>
+  <div class="list">
+    <div class="row">
+      <div class="col col-33"> 
+          <span class="label">Genel Yetenek</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="gyetdog" min="0" max="60">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="gyetyan" min="0" max="60">
+        </label>
+      </div>
+      <div class="col" ng-if="gyetdog && gyetyan">
+        <label class="net">
+          {{gyetdog-gyetyan*0.25}}
+        </label>
+      </div>  
+    </div>
+    <div class="row">
+      <div class="col col-33"> 
+          <span class="label">Genel Kultur</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="gkuldog" min="0" max="60">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="gkulyan" min="0" max="60">
+        </label>
+      </div>
+      <div class="col" ng-if="gkuldog && gkulyan">
+        <label class="net">
+          {{gkuldog-gkulyan*0.25}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-33"> 
+          <span class="label">Egitim Bilimleri</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="ebildog" min="0" max="80">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="ebilyan" min="0" max="60">
+        </label>
+      </div>
+      <div class="col" ng-if="ebildog && ebilyan">
+        <label class="net">
+          {{ebildog-ebilyan*0.25}}
+        </label>
+      </div>
+    </div>
+</div>
+
+<div class="list" ng-controller="KpssHCtrl" ng-if="gyetdog && gyetyan && gkuldog && gkulyan && ebildog && ebilyan">
+  <hr>
+  <div class="row">
+    <div class="col">
+      Yillar
+    </div> 
+    <div class="col">
+      KPSSP3
+      <br>
+      (Memur)
+    </div> 
+    <div class="col">
+      KPSSP10
+      <br>
+      (Ogretmen)
+    </div>  
+  </div>
+  <div class="row">
+      <div class="col"> 
+          <span class="label">2016</span>
+      </div>
+      <div class="col"> 
+        <label class="label">
+          {{KPSSP32016 | number:1}}
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="label">
+          {{KPSSP102016 | number:1}}
+        </label>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col"> 
+          <span class="label">2015</span>
+      </div>
+      <div class="col"> 
+        <label class="label">
+          {{KPSSP32015 | number:1}}
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="label">
+          {{KPSSP102015 | number:1}}
+        </label>
+      </div>
+    </div>
+</div>
+  </div>  
+  </ion-content>
+</ion-view>

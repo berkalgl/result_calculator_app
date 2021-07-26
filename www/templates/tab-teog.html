@@ -1,0 +1,183 @@
+<ion-view view-title="TEOG Puan Hesaplama">
+  <ion-content class="background" scroll="true" >
+  <div class="animated bounceInUp">
+    <div class="col col-offset-50">*Lutfen Dogru Sayisi Giriniz.</div>
+      <div class="row">
+      <div class="col col-offset-50">1.Donem Sinavi</div>
+      <div class="col">2.Donem Sinavi</div>
+  </div>
+  <div class="list">
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Matematik</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="matdog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="matdog2" min="0" max="20">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Fen ve Teknoloji</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="fendog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="fendog2" min="0" max="20">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Turkce</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="turdog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="turdog2" min="0" max="20">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">TC Inkilap Tarihi ve Ataturkculuk</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="inkdog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="inkdog2" min="0" max="20">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Din Kültürü ve Ahlak Bilgisi</span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="dindog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="dindog2" min="0" max="20">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-50"> 
+          <span class="label">Yabancı Dil </span>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="dildog" min="0" max="20">
+        </label>
+      </div>
+      <div class="col"> 
+        <label class="item item-input">
+          <input type="number" ng-model="dildog2" min="0" max="20">
+        </label>
+      </div>
+    </div> 
+</div>
+<hr>
+<div class="col col-50 col-offset-50">
+      *0 ile 100 arasi sayi giriniz.
+</div>
+<div class="list">
+  <div class="row">
+      <div class="col col-67"> 
+          <span class="label">6.Sinif Yil Sonu Basari Puani</span>
+      </div>
+      <div class="col col-33"> 
+        <label class="item item-input">
+          <input type="number" ng-model="ilkyil" min="0" max="100">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-67"> 
+          <span class="label">7.Sinif Yil Sonu Basari Puani</span>
+      </div>
+      <div class="col col-33"> 
+        <label class="item item-input">
+          <input type="number" ng-model="ikinciyil" min="0" max="100">
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-67"> 
+          <span class="label">8.Sinif Yil Sonu Basari Puani</span>
+      </div>
+      <div class="col col-33"> 
+        <label class="item item-input">
+          <input type="number" ng-model="ucuncuyil" min="0" max="100  ">
+        </label>
+      </div>
+    </div>
+
+</div>
+<hr>
+<div class="list" ng-if="matdog && fendog && turdog && inkdog && dildog && dindog && matdog2 && fendog2 && turdog2 && inkdog2 && dildog2 && dindog2 && ilkyil && ikinciyil && ucuncuyil">
+  <div class="row" >
+      <div class="col col-75" > 
+          <span class="label">1.Dönem Ağırlıklandırılmış Ortak Sınav Puanı (OSP1)</span>
+      </div>
+      <div class="col col-25" ng-controller="TeogCtrl"> 
+        <label>
+          {{birincisinav=ortakpuanhesaplama(matdog,fendog,turdog,inkdog,dildog,dindog)}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-75"> 
+          <span class="label">2.Dönem Ağırlıklandırılmış Ortak Sınav Puanı (OSP2)</span>
+      </div>
+      <div class="col col-25"> 
+        <label>
+          {{ikincisinav=ortakpuanhesaplama(matdog2,fendog2,turdog2,inkdog2,dildog2,dindog2)}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-75"> 
+          <span class="label">Ağırlıklandırılmış Ortak Sınav Puanı (AOSP)</span>
+      </div>
+      <div class="col col-25"> 
+        <label>
+          {{sinavort=(birincisinav+ikincisinav)/2}}
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-75"> 
+          <span class="label">Yerleştirmeye esas puan (YEP)</span>
+      </div>
+      <div class="col col-25"> 
+        <label >
+          {{yerlestirmepuani = (sinavort+ilkyil+ikinciyil+ucuncuyil)}}
+        </label>
+      </div>
+    </div>
+</div>
+  </div>
+  </ion-content>
+</ion-view>
